@@ -10,5 +10,7 @@ class PostsController < ApplicationController
     @response = open(url).read
     
     @results = JSON.parse(@response)
+    
+    @posts = @results["data"]
   end
 end
