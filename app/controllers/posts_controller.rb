@@ -8,11 +8,6 @@ class PostsController < ApplicationController
     url = "https://graph.facebook.com/me/home?access_token=#{my_access_token}&limit=200"
     
     response = open(url).read
-    
-    json_response = JSON.parse(response)
-    
-    @posts = json_response["data"]
-    
-    @posts_with_videos # = ? Filter out posts without videos in them
+
   end
 end
